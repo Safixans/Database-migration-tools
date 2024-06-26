@@ -1,0 +1,20 @@
+#spring:
+#  datasource:
+#    url: "jdbc:postgresql://localhost:5433/pdpmigration?currentSchema=sb_flyway"
+#    username: postgres
+#    password: 123
+#    driver-class-name: org.postgresql.Driver
+#
+#  flyway:
+#    enabled: true
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/pdpmigration?currentSchema=sb_flyway
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    locations: classpath:db_migration
+
