@@ -19,5 +19,4 @@ public class Task implements Serializable {
     private String description;
     private String label;
     private LocalDateTime createdAt;
-
 }
