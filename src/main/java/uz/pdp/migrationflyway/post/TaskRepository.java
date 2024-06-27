@@ -1,7 +1,6 @@
 package uz.pdp.migrationflyway.post;
 
 
-
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-
 public class TaskRepository {
 
     private final JdbcTemplate jdbcTemplate;

@@ -18,11 +18,10 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-            <version>9.10.2</version> <!-- replace with the desired version -->
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.27.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -68,47 +67,7 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>9.16.3</version>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>undo</goal>
-                            <goal>migrate</goal>
-                            <goal>info</goal>
 
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <url>jdbc:postgresql://localhost:5433/pdpmigration?currentSchema=sb_flyway</url>
-                    <driver>org.postgresql.Driver</driver>
-                    <user>postgres</user>
-                    <password>123</password>
-                    <baselineOnMigrate>true</baselineOnMigrate>
-                    <schemas>
-                        <schema>sb_flyway</schema>
-                    </schemas>
-                    <locations>
-                        <location>classpath:db/migration</location>
-                    </locations>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
