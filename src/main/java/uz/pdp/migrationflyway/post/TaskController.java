@@ -10,16 +10,16 @@ import java.util.List;
 @Slf4j
 @RequestMapping("/api/tasks")
 public class TaskController {
-    private final TaskRepository taskRepository;
+        private final TaskRepository taskRepository;
 
-    public TaskController(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
+        public TaskController(TaskRepository taskRepository) {
+            this.taskRepository = taskRepository;
+        }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Task>> getAll() {
-        log.info("Request to get all tasks");
-        return ResponseEntity.ok(taskRepository.getAll());
-    }
+        @GetMapping("/all")
+        public ResponseEntity<List<Task>> getAll() {
+            log.info("Request to get all tasks");
+            return ResponseEntity.ok(taskRepository.getAll());
+        }
 }
 

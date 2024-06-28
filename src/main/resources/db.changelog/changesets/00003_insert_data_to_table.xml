@@ -4,16 +4,16 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-<changeSet id="00003" author="Safixans">
-    <insert tableName="tasks">
-        <column name="name" value="Read a book"/>
-        <column name="description" value="Read about kavka"/>
-    </insert>
+    <changeSet id="00003" author="Safixans">
+        <insert tableName="job">
+            <column name="title" value="Read a book"/>
+            <column name="minsalary" value="123"/>
+            <column name="maxsalary" value="991"/>
+        </insert>
         <sql>
-            insert into tasks(name,description)
-            values ('Read about interprise design pattern ', 'Read about Sup/Pub')
-
+            insert into tasks(title, minsalary, maxsalary)
+            values ('Read about interprise design pattern ', 100, 456)
         </sql>
-</changeSet>
+    </changeSet>
 
 </databaseChangeLog>

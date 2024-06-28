@@ -4,8 +4,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-    <changeSet id="00003" author="Safixans">
-        <renameColumn tableName="tasks" oldColumnName="name" newColumnName="title"/>
+    <changeSet id="00002" author="Safixans">
+        <sql>
+            ALTER TABLE job
+                ADD CONSTRAINT chk_min_salary_positive CHECK (minSalary > 0);
+        </sql>
     </changeSet>
 
 </databaseChangeLog>
